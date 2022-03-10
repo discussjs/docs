@@ -46,31 +46,56 @@ Discuss.server(); // 服务器使用 (Server)
 Discuss.main(); // 无服务器使用 (ServerLess)
 ```
 
-编辑`.env`
+编辑`.env`，以`MongoDB`数据库为例
+:::tip
+具体如何配置其他数据库请前往[.env.example](https://github.com/Lete114/Discuss/blob/dev/.env.example)观看相应的配置信息说明
+:::
 
-```.env
+```bash
 # Discuss environment Config
 
-# 数据库连接地址
-DISCUSS_MONGODB=mongodb://localhost:27017/Discuss
-
-# 启动的端口号
+# 启动的端口号(仅对服务器有用)
 DISCUSS_PORT=6870
 
-# 加密的密钥字符串(自定义，未填写则默认为:Disucss)
+# Token 加密的密钥字符串([可选]自定义)
 DISCUSS_SECRET=Discuss
+
+# 数据库连接
+
+# 使用什么数据库
+## 目前可选的数据库 [cloudbase, deta, github, inspirecloud, leancloud, mongodb, mysql, postgresql, sqlite]
+DISCUSS_DB_TYPE=mongodb
+
+# ------ MongoDB ------
+## 如果你使用的是mongodb官方的免费数据库
+## 你可以使用连接字符串必须选择‘v2.2.12’版本的连接字符串
+## 将填入D_MONGO_URL环境变量即可，下面的其它配置就不用填写，仅需填写D_MONGO_URL即可
+D_MONGO_URL=
+## 主机地址 默认: 127.0.0.1
+D_MONGO_HOST=
+## 端口 默认: 27017
+D_MONGO_PORT=
+## 数据库名 默认: Discuss
+D_MONGO_DB=
+## 用户名
+D_MONGO_USER=admin
+## 密码
+D_MONGO_PASSWORD=111111
+## [可选项] 集群
+D_MONGO_REPLICASET=
+## [可选项] 认证源
+D_MONGO_AUTHSOURCE=
+## [可选项] 是否启用 SSL 连接方式
+D_MONGO_SSL=
 ```
 
 最后使用`nodejs`执行执行`index.js`文件，即：`node index.js`
 
+访问服务器公网 IP+端口即可初始化管理员用户，举例如下图
 ::: tip 提示
-启动成功后，请前往页面打开控制台，登录并修改用户名和密码
-
-默认用户名: `admin`
-
-默认密码: `111111`
+如果你绑定了域名，配置了`Nginx`映射的话，直接访问域名即可
 :::
-![Change Password](/img/Quick-Start/Change-Password.png)
+![Init](/img/Vercel-ServerLess-Deploy/Init.png)
 
 
 ### 配置管理

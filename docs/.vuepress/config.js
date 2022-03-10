@@ -49,7 +49,7 @@ module.exports = {
             link: "/support/Site",
           },
           {
-            text: "在 Hexo 博客中使用",
+            text: "在 Hexo 中使用",
             link: "/support/Hexo",
           },
         ],

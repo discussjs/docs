@@ -12,4 +12,5 @@ sidebar: false
 | 博主 | 链接 | 
 | ---- | ---- | 
 | Lete乐特 | [Lete乐特 's Blog](https://blog.imlete.cn/) |
+| CC康纳百川 | [CC's Blog](https://blog.ccknbc.cc/) |
 | 暗影 | [暗影博客](https://dsanying.github.io/) |

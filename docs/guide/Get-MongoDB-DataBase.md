@@ -28,4 +28,10 @@ sidebar: false
    需要将字符串中的`<password>`替换为您在第三步创建的数据库用户密码，修改`myFirstDatabase`为你想要的数据库名称例如:`Discuss`
    :::
    ![](/img/Get-MongoDB-DataBase/Connect.png)
+   ::: warning 注意
+   以下有两种连接数据库的方式，在不同应用场景中，使用不同的连接方式
+
+   而`Discuss`在更新到`v0.2.0`版本支持了多数据库后**不再支持**第一张图的连接方式，请使用下方第二张图的连接方式 **(选择2.2.12版本的数据库连接方式)**
+   :::
    ![](/img/Get-MongoDB-DataBase/Get-Connect.png)
+   ![](/img/Get-MongoDB-DataBase/Get-Connect-2.png)
