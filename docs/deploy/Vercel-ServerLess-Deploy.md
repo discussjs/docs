@@ -27,18 +27,19 @@ sidebar: auto
 ![Settings](/img/Vercel-ServerLess-Deploy/Settings.png)
 ![Add-Env](/img/Vercel-ServerLess-Deploy/Add-Env.png)
 
-| 属性名             | 必填 | 默认值    | 描述                                                                                                             |
-| ------------------ | ---- | --------- | ---------------------------------------------------------------------------------------------------------------- |
-| DISCUSS_SECRET     |      | Discuss   | token 生成盐加密(默认为:Discuss)                                                                                 |
-| DISCUSS_DB_TYPE    | ✅   |           | 使用什么数据库，可选数据库[cloudbase, deta, github, inspirecloud, leancloud, mongodb, mysql, postgresql, sqlite] |
-| D_MONGO_HOST       |      | 127.0.0.1 | 主机地址(支持数组形式)                                                                                           |
-| D_MONGO_PORT       |      | 27017     | 主机端口(支持数组形式)                                                                                           |
-| D_MONGO_DB         |      | Discuss   | 数据库名称                                                                                                       |
-| D_MONGO_USER       | ✅   |           | 用户名                                                                                                           |
-| D_MONGO_PASSWORD   | ✅   |           | 密码                                                                                                             |
-| D_MONGO_REPLICASET |      |           | 集群                                                                                                             |
-| D_MONGO_AUTHSOURCE |      |           | 认证源                                                                                                           |
-| D_MONGO_SSL        |      |           | 是否启用 SSL 连接方式                                                                                            |
+| 属性名             | 必填 | 默认值    | 描述                                                                                                                  |
+| ------------------ | ---- | --------- | --------------------------------------------------------------------------------------------------------------------- |
+| DISCUSS_SECRET     |      | Discuss   | token 生成盐加密(默认为:Discuss)                                                                                      |
+| DISCUSS_DB_TYPE    | ✅   |           | 使用什么数据库，可选数据库[cloudbase, deta, github, inspirecloud, leancloud, mongodb, mysql, postgresql, sqlite]      |
+| D_MONGO_URL        |      |           | 当设置了 URL 的数据库连接时，则下方的其它环境变量都将会被覆盖 **(仅适合 MongoDB 官方提供的`v2.2.12`版本的连接字符串)** |
+| D_MONGO_HOST       |      | 127.0.0.1 | 主机地址(支持数组形式)                                                                                                |
+| D_MONGO_PORT       |      | 27017     | 主机端口(支持数组形式)                                                                                                |
+| D_MONGO_DB         |      | Discuss   | 数据库名称                                                                                                            |
+| D_MONGO_USER       | ✅   |           | 用户名                                                                                                                |
+| D_MONGO_PASSWORD   | ✅   |           | 密码                                                                                                                  |
+| D_MONGO_REPLICASET |      |           | 集群                                                                                                                  |
+| D_MONGO_AUTHSOURCE |      |           | 认证源                                                                                                                |
+| D_MONGO_SSL        |      |           | 是否启用 SSL 连接方式                                                                                                 |
 
 ::: tip
 根据文章[获取 MongoDB 数据库](/guide/Get-MongoDB-DataBase.html)获取到的数据库连接字符串拆分填填入环境变量，举例如下
