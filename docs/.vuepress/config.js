@@ -32,6 +32,10 @@ module.exports = {
         text: "更多",
         items: [
           {
+            text: "多数据库支持",
+            link: "/guide/More-DataBase",
+          },
+          {
             text: "API 文档",
             link: "/guide/API-Docs",
           },
