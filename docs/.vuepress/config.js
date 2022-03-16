@@ -32,6 +32,10 @@ module.exports = {
         text: "更多",
         items: [
           {
+            text: "导入评论",
+            link: "/guide/Import",
+          },
+          {
             text: "多数据库支持",
             link: "/guide/More-DataBase",
           },
