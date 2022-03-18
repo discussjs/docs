@@ -1,10 +1,15 @@
 <template>
-  <div class="import-wrao">
+  <div class="import-wrap">
     <div class="import">
-      <select class="switch-select" v-model="select">
+      <select class="switch select" v-model="select">
         <option disabled value="">请选择</option>
         <option value="twikoo">Twikoo</option>
         <option value="waline">Waline</option>
+      </select>
+      <select class="switch table" v-model="table">
+        <option disabled value="">请选择</option>
+        <option value="comment">Comment</option>
+        <option value="counter">Counter</option>
       </select>
       <div class="import-item">
         <label>Server URLs:</label>
@@ -19,6 +24,7 @@
         <input type="password" v-model="password" />
       </div>
       <div class="import-item">
+        <label>Comments:</label>
         <textarea
           v-model="data"
           class="import-textarea"
@@ -29,8 +35,13 @@
         <button @click="onImport" :disabled="isSend || isImport">Import</button>
       </div>
       <div class="import-item">
+        <button @click="onDownload" :disabled="isSend || isDownload">
+          Download
+        </button>
+      </div>
+      <div class="import-item" v-show="info">
+        <label>Info:</label>
         <textarea
-          v-show="info"
           v-model="info"
           class="import-textarea"
           placeholder="此处是信息输出控制台"
@@ -49,6 +60,7 @@ export default {
   computed: {
     isImport() {
       return !(
+        this.table.length &&
         this.select.length &&
         this.data.length &&
         this.server.length &&
@@ -56,10 +68,14 @@ export default {
         this.password.length
       );
     },
+    isDownload() {
+      return !(this.table.length && this.select.length && this.data.length);
+    },
   },
   data() {
     return {
       isSend: false,
+      table: "",
       select: "",
       data: [],
       server: "",
@@ -72,7 +88,8 @@ export default {
     async onImport() {
       try {
         this.info = "";
-        const comments = this.parse();
+        const comments = this.table === "comment" ? this.parseComments() : [];
+        const counters = this.table === "counter" ? this.parseCounter() : [];
         this.isSend = true;
         const result = await ajax({
           url: this.server,
@@ -80,6 +97,7 @@ export default {
           data: {
             type: "IMPORT",
             comments,
+            counters,
             username: this.username,
             password: this.password,
           },
@@ -94,6 +112,18 @@ export default {
         this.isSend = false;
       }
     },
+    onDownload() {
+      const data =
+        this.table === "comment" ? this.parseComments() : this.parseCounter();
+
+      const options = { type: "application/json;charset=utf-8" };
+      const blob = new Blob([JSON.stringify(data)], options);
+
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = `Discuss.${this.table}.json`;
+      a.click();
+    },
     data2json() {
       try {
         let data = this.data;
@@ -101,7 +131,7 @@ export default {
           data = this.data.replace(/}\s*$/gm, "},").replace(/,\s*$/g, "");
           data = `[${data}]`;
         }
-        
+
         return JSON.parse(data);
       } catch (error) {
         const info = "解析评论信息错误，请查看输入的评论信息是否有误！";
@@ -144,8 +174,48 @@ export default {
       }
       return content;
     },
-    parse() {
-      if (!this.select) return;
+    IndexHandler(params) {
+      let path = params.replace(/(\/index\.html|\/)*$/gi, "");
+      if (path.length === 0) path += "/";
+      return path;
+    },
+    parseCounter() {
+      if (!this.table || !this.select) return;
+      const counters = [];
+      const data = this.data2json();
+      for (const i of data) {
+        const counter = {};
+
+        // 处理id
+        const condition =
+          Object.prototype.toString.call(i._id) === "[object Object]";
+        if (condition) counter.id = i._id.$oid;
+        else if (i._id) counter.id = i._id;
+        else if (i.objectId) counter.id = i.objectId;
+        else counter.id = i.id;
+        counter.id = counter.id.substring(0, 24);
+
+        counter.path = i.url || i.path;
+        counter.path = this.IndexHandler(counter.path)
+        counter.time = i.time;
+        counter.created = this.select === "twikoo" ? i.created : i.createdAt;
+        counter.updated = this.select === "twikoo" ? i.updated : i.updatedAt;
+
+        counters.push(counter);
+      }
+
+      return counters.reduce((total, cur, index) => {
+        let hasValue = total.findIndex((current) => {
+          return current.path === cur.path;
+        });
+        hasValue === -1 && total.push(cur);
+        hasValue !== -1 &&
+          (total[hasValue].time = total[hasValue].time + cur.time);
+        return total;
+      }, []);
+    },
+    parseComments() {
+      if (!this.table || !this.select) return;
       const comments = [];
       const data = this.data2json();
       for (const i of data) {
@@ -174,8 +244,6 @@ export default {
 
         comment.ip = i.ip || "";
 
-        comment.stick = i.master ? true : false;
-
         if (i.status) {
           switch (i.status) {
             case "waiting":
@@ -195,8 +263,10 @@ export default {
           comment.status = i.isSpam ? "spam" : "accept";
         }
         comment.path = i.url || "/";
+        comment.path = this.IndexHandler(comment.path)
 
         if (this.select === "twikoo") {
+          comment.stick = i.top ? true : false;
           comment.created = !isNaN(i.created)
             ? i.created
             : new Date(i.created).getTime();
@@ -204,6 +274,7 @@ export default {
             ? i.updated
             : new Date(i.updated).getTime();
         } else if (this.select === "waline" || this.select === "valine") {
+          comment.stick = i.sticky ? true : false;
           comment.created = !isNaN(i.createdAt)
             ? i.createdAt
             : new Date(i.createdAt).getTime();
@@ -224,6 +295,9 @@ export default {
 </script>
 
 <style scoped>
+.import-wrap {
+  margin-top: 20px;
+}
 .import {
   padding: 50px;
   position: relative;
@@ -231,7 +305,7 @@ export default {
   background: rgb(200 200 200 / 20%);
 }
 
-.switch-select {
+.switch {
   right: 50px;
   position: absolute;
   cursor: pointer;
@@ -239,6 +313,10 @@ export default {
   background: 0 0;
   border: 1px solid #33323e;
   border-radius: 5px;
+}
+
+.select {
+  right: 150px;
 }
 
 .import-item {
@@ -274,7 +352,7 @@ export default {
 }
 
 .import-item button {
-  margin: 40px 0;
+  margin: 20px 0 0;
   display: flex;
   align-items: center;
   justify-content: center;
