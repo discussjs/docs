@@ -26,40 +26,25 @@ module.exports = {
       { text: "快速开始", link: "/Quick-Start" },
       {
         text: "免费部署",
-        items: [{ text: "Vercel", link: "/deploy/Vercel-ServerLess-Deploy" }],
+        items: [
+          { text: "Vercel", link: "/deploy/Vercel-ServerLess-Deploy" },
+          { text: "InspireCloud", link: "/deploy/InspireCloud-ServerLess-Deploy" },
+        ],
       },
       {
         text: "更多",
         items: [
-          {
-            text: "导入评论",
-            link: "/guide/Import",
-          },
-          {
-            text: "多数据库支持",
-            link: "/guide/More-DataBase",
-          },
-          {
-            text: "API 文档",
-            link: "/guide/API-Docs",
-          },
-          {
-            text: "获取MongoDB数据库",
-            link: "/guide/Get-MongoDB-DataBase",
-          },
+          { text: "导入评论", link: "/guide/Import" },
+          { text: "多数据库支持", link: "/guide/More-DataBase" },
+          { text: "API 文档", link: "/guide/API-Docs" },
+          { text: "获取MongoDB数据库", link: "/guide/Get-MongoDB-DataBase" },
         ],
       },
       {
         text: "支持",
         items: [
-          {
-            text: "有哪些网站在使用",
-            link: "/support/Site",
-          },
-          {
-            text: "在 Hexo 中使用",
-            link: "/support/Hexo",
-          },
+          { text: "有哪些网站在使用", link: "/support/Site" },
+          { text: "在 Hexo 中使用", link: "/support/Hexo" },
         ],
       },
     ],

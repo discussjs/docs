@@ -38,7 +38,7 @@ title: 评论数据导入
 1. 用编辑器打开上方转换好后下载到本地的`Discuss.xxx.json`文件
 2. 按`ctrl + h`(大部分编辑器都是这个快捷键)，**匹配值是`"id":`**、**替换值是`_id`**最后点击全部替换即可
 
-![replace](/img/Import/replace.png)
+![replace](/img/guide/Import/replace.png)
 
 :::
 
