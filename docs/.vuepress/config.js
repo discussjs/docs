@@ -29,6 +29,7 @@ module.exports = {
         items: [
           { text: "Vercel", link: "/deploy/Vercel-ServerLess-Deploy" },
           { text: "InspireCloud", link: "/deploy/InspireCloud-ServerLess-Deploy" },
+          { text: "CloudBase", link: "/deploy/CloudBase-ServerLess-Deploy" },
         ],
       },
       {
