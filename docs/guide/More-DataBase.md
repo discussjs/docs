@@ -29,22 +29,6 @@ Discuss 支持多数据库存储，让用户有更多选择存储的方式，一
 | ------------ | ---- | ------ | ----------------------------------------------------------------------------- |
 | D_DETA_KEY   | ✅   |        | Deta 项目密钥 Key [详细](https://docs.deta.sh/docs/base/about#how-do-i-start) |
 
-## GitHub
-
-::: tip 提示
-将评论数据以 CSV 文件的格式存储在 GitHub 仓库中。
-
-使用 GitHub 作为数据存储需要申请 [Personal access tokens](https://github.com/settings/tokens/new)
-
-进去后选择 **Expiration(到期)** 时间为**永不到期**，**Select scopes(选择 Token 授权的范围)**，勾选**repo**即可
-:::
-
-| 环境变量名称 | 必填 | 默认值 | 描述                                                 |
-| ------------ | ---- | ------ | ---------------------------------------------------- |
-| D_GH_TOKEN   | ✅   |        | [New tokens](https://github.com/settings/tokens/new) |
-| D_GH_REPO    | ✅   |        | 仓库名                                               |
-| D_GH_PATH    |      | ./     | 仓库存储路径                                         |
-
 ## InspireCloud 轻服务
 
 | 环境变量名称 | 必填 | 默认值 | 描述       |
