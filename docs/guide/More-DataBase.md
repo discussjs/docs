@@ -9,11 +9,14 @@ sidebar: auto
 Discuss 支持多数据库存储，让用户有更多选择存储的方式，一下是通用环境变量，具体请看[.env.example](https://github.com/Lete114/Discuss/blob/dev/.env.example)
 :::
 
-| 环境变量名称    | 必填 | 默认值  | 描述                                 |
-| --------------- | ---- | ------- | ------------------------------------ |
-| DISCUSS_PORT    |      | 6870    | 启动的端口号(仅对服务器有用)         |
-| DISCUSS_SECRET  |      | Discuss | Token 加密的密钥字符串([可选]自定义) |
-| DISCUSS_DB_TYPE | ✅   |         | 使用什么数据库                       |
+| 环境变量名称       | 必填 | 默认值    | 描述                                 |
+| ------------------ | ---- | --------- | ------------------------------------ |
+| DISCUSS_PORT       |      | 6870      | 启动的端口号(仅对服务器有用)         |
+| DISCUSS_SECRET     |      | Discuss   | Token 加密的密钥字符串([可选]自定义) |
+| DISCUSS_DB_TYPE    | ✅   |           | 使用什么数据库                       |
+| DISCUSS_DB_ADMIN   |      | d_admin   | 数据库管理员信息表名(建议全小写)     |
+| DISCUSS_DB_COMMENT |      | d_comment | 数据库评论信息表名                   |
+| DISCUSS_DB_COUNTER |      | d_counter | 数据库访问量统计信息表名             |
 
 ## CloudBase 腾讯云
 
