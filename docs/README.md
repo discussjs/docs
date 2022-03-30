@@ -3,7 +3,7 @@ title: 简介
 ---
 
 <h1 align="center"><a href="https://discuss.js.org" target="_blank"><img src="/svg/Logo.svg" alt="Logo"></a></h1>
-<p align="center">一个简单，安全，免费的评论系统 | A simple, safe, free comment system</p>
+<p align="center">一款简单，安全，免费的评论系统 | A simple, safe, free comment system</p>
 
 <p align="center">
     <a href="https://discuss.js.org" target="_blank"><img src="https://img.shields.io/badge/-Docs-1081c1?logo=read-the-docs" alt="Docs"></a>

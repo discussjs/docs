@@ -30,7 +30,7 @@ sidebar: auto
 | 属性名             | 必填 | 默认值    | 描述                                                                                                                  |
 | ------------------ | ---- | --------- | --------------------------------------------------------------------------------------------------------------------- |
 | DISCUSS_SECRET     |      | Discuss   | token 生成盐加密(默认为:Discuss)                                                                                      |
-| DISCUSS_DB_TYPE    | ✅   |           | 使用什么数据库，可选数据库[cloudbase, deta, github, inspirecloud, leancloud, mongodb, mysql, postgresql, sqlite]      |
+| DISCUSS_DB_TYPE    | ✅   |           | 使用什么数据库，可选数据库[cloudbase, deta, inspirecloud, leancloud, mongodb, mysql, postgresql, sqlite]      |
 | D_MONGO_URL        |      |           | 当设置了 URL 的数据库连接时，则下方的其它环境变量都将会被覆盖 **(仅适合 MongoDB 官方提供的`v2.2.12`版本的连接字符串)** |
 | D_MONGO_HOST       |      | 127.0.0.1 | 主机地址(支持数组形式)                                                                                                |
 | D_MONGO_PORT       |      | 27017     | 主机端口(支持数组形式)                                                                                                |
@@ -51,7 +51,7 @@ sidebar: auto
 ```bash
 
 # 使用什么数据库
-## 目前可选的数据库 [cloudbase, deta, github, inspirecloud, leancloud, mongodb, mysql, postgresql, sqlite]
+## 目前可选的数据库 [cloudbase, deta, inspirecloud, leancloud, mongodb, mysql, postgresql, sqlite]
 DISCUSS_DB_TYPE=mongodb
 
 # 下方是申请得到的数据库连接字符串

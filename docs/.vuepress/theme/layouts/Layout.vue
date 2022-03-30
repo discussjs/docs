@@ -28,7 +28,7 @@ export default {
           el: "#Discuss-wrap",
           master: "管理员",
           stick: "TOP",
-          serverURLs: "https://discuss-doc.imlete.cn/",
+          serverURLs: "https://env-jxscvzag.service.tcloudbase.com/discuss/doc"
         });
       } catch (error) {}
     },
