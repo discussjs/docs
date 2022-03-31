@@ -5,6 +5,7 @@ module.exports = {
   port: "6872",
   head: [
     ["link", { rel: "icon", href: "/img/favicon.ico" }],
+    ["meta", { name: "baidu-site-verification", content: "code-oIKk7dKcrf" }],
     [
       "meta",
       {
@@ -28,7 +29,10 @@ module.exports = {
         text: "免费部署",
         items: [
           { text: "Vercel", link: "/deploy/Vercel-ServerLess-Deploy" },
-          { text: "InspireCloud", link: "/deploy/InspireCloud-ServerLess-Deploy" },
+          {
+            text: "InspireCloud",
+            link: "/deploy/InspireCloud-ServerLess-Deploy",
+          },
           { text: "CloudBase", link: "/deploy/CloudBase-ServerLess-Deploy" },
         ],
       },
