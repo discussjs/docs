@@ -1,0 +1,31 @@
+{
+  "headers": [
+    {
+      "source": "(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, s-maxage=86400, max-age=86400"
+        }
+      ]
+    },
+    {
+      "source": "/img/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, s-maxage=31536000, max-age=31536000"
+        }
+      ]
+    },
+    {
+      "source": "/svg/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, s-maxage=31536000, max-age=31536000"
+        }
+      ]
+    }
+  ]
+}
