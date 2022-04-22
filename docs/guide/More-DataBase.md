@@ -13,7 +13,7 @@ Discuss 支持多数据库存储，让用户有更多选择存储的方式，一
 | ------------------ | ---- | --------- | --------------------------------------------------------------------------------------------- |
 | DISCUSS_PORT       |      | 6870      | 启动的端口号(仅对服务器有用)                                                                  |
 | DISCUSS_SECRET     |      | Discuss   | Token 加密的密钥字符串([可选]自定义)                                                          |
-| DISCUSS_DB_TYPE    | ✅   |           | 使用什么数据库 [cloudbase, deta, inspirecloud, leancloud, mongodb, mysql, postgresql, sqlite] |
+| DISCUSS_DB_TYPE    | ✅   |           | 使用什么数据库 [cloudbase, deta, leancloud, mongodb, mysql, postgresql, sqlite] |
 | DISCUSS_DB_ADMIN   |      | d_admin   | 数据库管理员信息表名(建议全小写)                                                              |
 | DISCUSS_DB_COMMENT |      | d_comment | 数据库评论信息表名                                                                            |
 | DISCUSS_DB_COUNTER |      | d_counter | 数据库访问量统计信息表名                                                                      |
@@ -31,31 +31,6 @@ Discuss 支持多数据库存储，让用户有更多选择存储的方式，一
 | 环境变量名称 | 必填 | 默认值 | 描述                                                                          |
 | ------------ | ---- | ------ | ----------------------------------------------------------------------------- |
 | D_DETA_KEY   | ✅   |        | Deta 项目密钥 Key [详细](https://docs.deta.sh/docs/base/about#how-do-i-start) |
-
-## InspireCloud 轻服务
-
-| 环境变量名称 | 必填 | 默认值 | 描述       |
-| ------------ | ---- | ------ | ---------- |
-| D_IC_ID      | ✅   |        | 轻服务 ID  |
-| D_IC_KEY     |      |        | 轻服务 Key |
-
-轻服务只在设置中提供了**Service ID**并未提供**Service KEY**，而且这个 key 是默认存储在环境变量中的，你可以通过编写一个云函数来获取
-
-::: tip 提示
-不建议你这么做，因为`Discuss`会自动获取**Service KEY**，你只需要填写**Service ID**即可
-:::
-
-```js
-module.exports = async function (params, context) {
-  console.log("id", process.env.INSPIRECLOUD_SERVICE_ID);
-  console.log("secret", process.env.INSPIRECLOUD_SERVICE_SECRET);
-  return {
-    test: "Hello World!",
-  };
-};
-```
-
-![Get Secret](/img/More-Database/Get-Secret.png)
 
 ## LeanCloud
 
