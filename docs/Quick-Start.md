@@ -3,27 +3,39 @@ title: 快速开始
 sidebar: auto
 ---
 
-## 准备
+## 太长不想看
 
-感谢您使用 Discuss 评论系统，只需几个步骤，您就可以在您的网站中部署和管理 Discuss 提供评论服务。
-
-在开始之前我们需要准备什么？？
-::: tip 提示
-如果你没有服务器(不想部署在服务器上)的话，你可以选择[免费部署](/deploy/Vercel-ServerLess-Deploy.html)
+::: warning
+这是一个简短的 Discuss 构建指南 (适合有开发经验的用户)
 :::
 
-1. 服务器
-2. 数据库 (MongoDB)
-3. NodeJS、NPM 环境
-4. 一双手、还有耐心
+1. 选择部署方式 **服务器** OR **无服务器(Serverless)**
+2. 新建`package.json`，填入如下内容
+
+```json
+{ "dependencies": { "discuss": "latest" } }
+```
+
+3. 新建`index.js`，填入如下内容
+
+```js
+const Discuss = require("discuss");
+
+// 选择以什么方式运行
+Discuss.server(); // 服务器使用 (Server)
+
+Discuss.main(); // 无服务器使用 (ServerLess)
+```
+
+4. 配置[环境变量](/guide/More-DataBase.html)，填写相关的配置信息
+5. 使用`nodejs`执行执行`index.js`文件，即：`node index.js`
+6. 访问启动的服务地址，初始化管理员账户即可
 
 ## 服务端 (Server)
 
 ::: tip 提示
-目前还未提供 docker 部署方式，后续会陆续补上，敬请期待~
+如果你没有服务器(不想部署在服务器上)的话，你可以选择[免费部署](/deploy/Vercel-ServerLess-Deploy.html)
 :::
-
-本文主要描述如何在服务器上部署`Disucss`评论系统，并且默认您已拥有上边提起的准备环境(包括 MongoDB 数据库)
 
 初始化 npm 项目
 
@@ -90,13 +102,6 @@ D_MONGO_SSL=
 ```
 
 最后使用`nodejs`执行执行`index.js`文件，即：`node index.js`
-
-访问服务器公网 IP+端口即可初始化管理员用户，举例如下图
-::: tip 提示
-如果你绑定了域名，配置了`Nginx`映射的话，直接访问域名即可
-:::
-![Init](/img/Vercel-ServerLess-Deploy/Init.png)
-
 
 ### 配置管理
 
