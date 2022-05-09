@@ -11,3 +11,6 @@ title: 支持 Discuss 评论系统
 
 ## Hexo-Theme-MengD(萌典)
 > [Supported](https://github.com/Lete114/Hexo-Theme-MengD)
+
+## Hexo-Theme-Volantis
+> [Supported](github.com/volantis-x/hexo-theme-volantis)
