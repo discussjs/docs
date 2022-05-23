@@ -161,9 +161,9 @@ D_MONGO_SSL=
 ```html
 <head>
   ...
-  <!-- <script src="https://cdn.jsdelivr.net/npm/discuss/dist/Discuss.js"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/discuss"></script> -->
   <!-- 建议你使用指定版本的js，而不是上方的最新版本，因为后续如果js有更新的话，可能会出现问题 -->
-  <script src="https://cdn.jsdelivr.net/npm/discuss@0.2.3/dist/Discuss.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/discuss@0.3.0"></script>
   ...
 </head>
 <body>
@@ -173,6 +173,33 @@ D_MONGO_SSL=
     // 初始化
     Discuss.init({
       el: "#Discuss-Comments",
+      serverURLs: "",
+    });
+  </script>
+</body>
+```
+
+你也可以自定义初始化评论管理
+
+::: tip
+例如： 你可以在你的网站上新建一个`admin/index.html`文件，然后填入如下信息，这是你可以在你的网站上访问`https://www.xxx.com/admin`即可对你的评论进行管理
+:::
+
+```html
+<head>
+  ...
+  <!-- <script src="https://cdn.jsdelivr.net/npm/discuss/dist/Discuss.admin.js"></script> -->
+  <!-- 建议你使用指定版本的js，而不是上方的最新版本，因为后续如果js有更新的话，可能会出现问题 -->
+  <script src="https://cdn.jsdelivr.net/npm/discuss@0.3.0/dist/Discuss.admin.js"></script>
+  ...
+</head>
+<body>
+  ...
+  <div id="Discuss-Comments-Admin"></div>
+  <script>
+    // 初始化评论管理
+    DiscussAdmin.init({
+      el: "#Discuss-Comments-Admin",
       serverURLs: "",
     });
   </script>
@@ -196,6 +223,13 @@ D_MONGO_SSL=
 
 用于发送请求，获取评论信息的服务端地址
 
+### color
+
+- 类型: `String`
+- 默认: `#f4645f`
+
+设置评论的主要颜色
+
 ### path
 
 - 类型: `String`
@@ -210,7 +244,8 @@ D_MONGO_SSL=
 ### lang
 
 - 类型: `String`
-- 默认: `zh_CN`
+- 默认: `cn`
+- 可选参数: ['cn', 'en']
 
 指定显示的语言
 
@@ -255,6 +290,8 @@ D_MONGO_SSL=
 
 - 类型: `Object|String`
 - 默认: `内置表情`
+
+> 支持一个json类型的url地址(内部自动判断是否是url后发送请求)
 
 如未指定值，则使用内置表情
 
