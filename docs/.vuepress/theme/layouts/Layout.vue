@@ -3,7 +3,7 @@
     <template #page-bottom>
       <div class="page-edit">
         <div id="Discuss-wrap"></div>
-        <script src="https://npm.elemecdn.com/discuss@0.3.0/dist/Discuss.js" ref="DiscussJS"></script>
+        <script src="https://npm.elemecdn.com/discuss@0.3.1/dist/Discuss.js" ref="DiscussJS"></script>
       </div>
     </template>
   </ParentLayout>
