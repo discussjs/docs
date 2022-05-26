@@ -3,46 +3,46 @@
     <template #page-bottom>
       <div class="page-edit">
         <div id="Discuss-wrap"></div>
-        <script src="https://npm.elemecdn.com/discuss@0.3.1/dist/Discuss.js" ref="DiscussJS"></script>
+        <script src="https://npm.elemecdn.com/discuss@0.3.2/dist/Discuss.js" ref="DiscussJS"></script>
       </div>
     </template>
   </ParentLayout>
 </template>
 
 <script>
-import ParentLayout from "@parent-theme/layouts/Layout.vue";
+import ParentLayout from '@parent-theme/layouts/Layout.vue'
 
 export default {
-  name: "Layout",
+  name: 'Layout',
   components: {
-    ParentLayout,
+    ParentLayout
   },
   mounted() {
-    this.initDiscuss();
-    this.initJs();
+    this.initDiscuss()
+    this.initJs()
   },
   methods: {
     initDiscuss() {
       try {
         Discuss.init({
-          el: "#Discuss-wrap",
-          master: "管理员",
-          stick: "TOP",
-          ph: "文档未开启邮件通知，如果你有任何问题，请加官方用户交流QQ群：343890210",
-          serverURLs: "https://env-jxscvzag.service.tcloudbase.com/discuss/doc"
-        });
+          el: '#Discuss-wrap',
+          master: '管理员',
+          stick: 'TOP',
+          ph: '文档未开启邮件通知，如果你有任何问题，请加官方用户交流QQ群：343890210',
+          serverURLs: 'https://env-jxscvzag.service.tcloudbase.com/discuss/doc'
+        })
       } catch (error) {}
     },
     initJs() {
-      const discuss = this.$refs.DiscussJS;
+      const discuss = this.$refs.DiscussJS
       if (discuss) {
-        discuss.onload = this.initDiscuss;
-        this.$router.afterEach(this.onRoute);
+        discuss.onload = this.initDiscuss
+        this.$router.afterEach(this.onRoute)
       }
     },
     onRoute(to, from) {
-      if (to.path !== from.path) this.initDiscuss();
-    },
-  },
-};
+      if (to.path !== from.path) this.initDiscuss()
+    }
+  }
+}
 </script>

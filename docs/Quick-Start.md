@@ -19,12 +19,12 @@ sidebar: auto
 3. 新建`index.js`，填入如下内容
 
 ```js
-const Discuss = require("discuss");
+const Discuss = require('discuss')
 
 // 选择以什么方式运行
-Discuss.server(); // 服务器使用 (Server)
+Discuss.server() // 服务器使用 (Server)
 
-Discuss.main(); // 无服务器使用 (ServerLess)
+Discuss.main() // 无服务器使用 (ServerLess)
 ```
 
 4. 配置[环境变量](/guide/More-DataBase.html)，填写相关的配置信息
@@ -50,12 +50,12 @@ touch index.js .env             # 创建index.js 以及 .env(环境配置文件)
 编辑`index.js`
 
 ```js
-const Discuss = require("discuss");
+const Discuss = require('discuss')
 
 // 选择以什么方式运行
-Discuss.server(); // 服务器使用 (Server)
+Discuss.server() // 服务器使用 (Server)
 
-Discuss.main(); // 无服务器使用 (ServerLess)
+Discuss.main() // 无服务器使用 (ServerLess)
 ```
 
 编辑`.env`，以`MongoDB`数据库为例
@@ -163,7 +163,7 @@ D_MONGO_SSL=
   ...
   <!-- <script src="https://cdn.jsdelivr.net/npm/discuss"></script> -->
   <!-- 建议你使用指定版本的js，而不是上方的最新版本，因为后续如果js有更新的话，可能会出现问题 -->
-  <script src="https://cdn.jsdelivr.net/npm/discuss@0.3.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/discuss@0.3.2"></script>
   ...
 </head>
 <body>
@@ -172,9 +172,9 @@ D_MONGO_SSL=
   <script>
     // 初始化
     Discuss.init({
-      el: "#Discuss-Comments",
-      serverURLs: "",
-    });
+      el: '#Discuss-Comments',
+      serverURLs: ''
+    })
   </script>
 </body>
 ```
@@ -190,7 +190,7 @@ D_MONGO_SSL=
   ...
   <!-- <script src="https://cdn.jsdelivr.net/npm/discuss/dist/Discuss.admin.js"></script> -->
   <!-- 建议你使用指定版本的js，而不是上方的最新版本，因为后续如果js有更新的话，可能会出现问题 -->
-  <script src="https://cdn.jsdelivr.net/npm/discuss@0.3.1/dist/Discuss.admin.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/discuss@0.3.2/dist/Discuss.admin.js"></script>
   ...
 </head>
 <body>
@@ -199,9 +199,9 @@ D_MONGO_SSL=
   <script>
     // 初始化评论管理
     DiscussAdmin.init({
-      el: "#Discuss-Comments-Admin",
-      serverURLs: "",
-    });
+      el: '#Discuss-Comments-Admin',
+      serverURLs: ''
+    })
   </script>
 </body>
 ```
@@ -291,7 +291,7 @@ D_MONGO_SSL=
 - 类型: `Object|String`
 - 默认: `内置表情`
 
-> 支持一个json类型的url地址(内部自动判断是否是url后发送请求)
+> 支持一个 json 类型的 url 地址(内部自动判断是否是 url 后发送请求)
 
 如未指定值，则使用内置表情
 
