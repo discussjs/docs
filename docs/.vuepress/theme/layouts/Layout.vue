@@ -31,6 +31,7 @@ export default {
           ph: '文档未开启邮件通知，如果你有任何问题，请加官方用户交流QQ群：343890210',
           serverURLs: 'https://env-jxscvzag.service.tcloudbase.com/discuss/doc'
         })
+        this.setEmot()
       } catch (error) {}
     },
     initJs() {
@@ -42,6 +43,26 @@ export default {
     },
     onRoute(to, from) {
       if (to.path !== from.path) this.initDiscuss()
+    },
+    setEmot() {
+      let SitichCount = 29
+
+      const Sitich = this.heandlerEmot(SitichCount, '/img/emot/Sitich/', [])
+
+      const emot = Sitich[Math.floor(Math.random() * Sitich.length)]
+      const style = document.createElement('style')
+      style.textContent = `#Discuss .D-input-content {
+                            background-repeat: no-repeat;
+                            background-position: right bottom;
+                            background-image: url(${emot});
+                          }`
+      document.head.appendChild(style)
+    },
+    heandlerEmot(count, path, result) {
+      while (count) {
+        result.push(path + count-- + '.gif')
+      }
+      return result
     }
   }
 }
