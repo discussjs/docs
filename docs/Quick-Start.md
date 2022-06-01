@@ -182,7 +182,9 @@ D_MONGO_SSL=
 你也可以自定义初始化评论管理
 
 ::: tip
-例如： 你可以在你的网站上新建一个`admin/index.html`文件，然后填入如下信息，这是你可以在你的网站上访问`https://www.xxx.com/admin`即可对你的评论进行管理
+例如: 你可以在你的网站上新建一个`admin/index.html`文件，然后填入如下信息，这是你可以在你的网站上访问`https://www.xxx.com/admin`即可对你的评论进行管理
+
+例如: 当前文档的`/admin`路径就可以直接管理评论 [https://discuss.js.org/admin](https://discuss.js.org/admin)
 :::
 
 ```html
