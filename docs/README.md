@@ -14,8 +14,6 @@ title: 简介
     <a href="https://github.com/discussjs/Discuss/blob/dev/LICENSE"><img src="https://img.shields.io/npm/l/discuss?color=ee5535" alt="MIT License"></a>
 </p>
 
-## 简介
-
 **Discuss**是一款简单，安全，免费的评论系统，仅提供基础的评论功能，并没有过多的功能
 
 这可以使得 **Discuss** 可以融合进其它项目，甚至可以方便而再此基础上进行二次开发
