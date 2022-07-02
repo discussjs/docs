@@ -47,13 +47,14 @@ module.exports = {
           { text: '有哪些网站在使用', link: '/support/Site' },
           { text: '在 Hexo 中使用', link: '/support/Hexo' }
         ]
-      }
+      },
+      { text: 'GitHub', link: 'https://github.com/discussjs/Discuss' },
     ],
     sidebar: 'auto',
     lastUpdated: true,
     searchMaxSuggestoins: 10,
     // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
-    repo: 'Lete114/Discuss',
+    repo: 'discussjs/docs',
     // 假如文档不是放在仓库的根目录下：
     docsDir: 'docs',
     // 假如文档放在一个特定的分支下：
