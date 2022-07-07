@@ -163,7 +163,7 @@ D_MONGO_SSL=
   ...
   <!-- <script src="https://cdn.jsdelivr.net/npm/discuss"></script> -->
   <!-- 建议你使用指定版本的js，而不是上方的最新版本，因为后续如果js有更新的话，可能会出现问题 -->
-  <script src="https://cdn.jsdelivr.net/npm/discuss@1.0.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/discuss@1.0.2"></script>
   ...
 </head>
 <body>
@@ -192,7 +192,7 @@ D_MONGO_SSL=
   ...
   <!-- <script src="https://cdn.jsdelivr.net/npm/discuss/dist/Discuss.admin.js"></script> -->
   <!-- 建议你使用指定版本的js，而不是上方的最新版本，因为后续如果js有更新的话，可能会出现问题 -->
-  <script src="https://cdn.jsdelivr.net/npm/discuss@1.0.1/dist/Discuss.admin.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/discuss@1.0.2/dist/Discuss.admin.js"></script>
   ...
 </head>
 <body>
