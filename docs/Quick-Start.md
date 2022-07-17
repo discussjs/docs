@@ -19,12 +19,12 @@ sidebar: auto
 3. 新建`index.js`，填入如下内容
 
 ```js
-const Discuss = require('discuss')
+const discuss = require('discuss')
 
 // 选择以什么方式运行
-Discuss.server() // 服务器使用 (Server)
+discuss.server() // 服务器使用 (Server)
 
-Discuss.main() // 无服务器使用 (ServerLess)
+discuss.main() // 无服务器使用 (ServerLess)
 ```
 
 4. 配置[环境变量](/guide/More-DataBase.html)，填写相关的配置信息
@@ -50,17 +50,17 @@ touch index.js .env             # 创建index.js 以及 .env(环境配置文件)
 编辑`index.js`
 
 ```js
-const Discuss = require('discuss')
+const discuss = require('discuss')
 
 // 选择以什么方式运行
-Discuss.server() // 服务器使用 (Server)
+discuss.server() // 服务器使用 (Server)
 
-Discuss.main() // 无服务器使用 (ServerLess)
+discuss.main() // 无服务器使用 (ServerLess)
 ```
 
 编辑`.env`，以`MongoDB`数据库为例
 :::tip
-具体如何配置其他数据库请前往[.env.example](https://github.com/Lete114/Discuss/blob/dev/.env.example)观看相应的配置信息说明
+具体如何配置其他数据库请前往[.env.example](https://github.com/discussjs/Discuss/blob/main/.env.example)观看相应的配置信息说明
 :::
 
 ```bash
@@ -70,7 +70,7 @@ Discuss.main() // 无服务器使用 (ServerLess)
 DISCUSS_PORT=6870
 
 # Token 加密的密钥字符串([可选]自定义)
-DISCUSS_SECRET=Discuss
+DISCUSS_SECRET=discuss
 
 # 数据库连接
 
@@ -87,7 +87,7 @@ D_MONGO_URL=
 D_MONGO_HOST=
 ## 端口 默认: 27017
 D_MONGO_PORT=
-## 数据库名 默认: Discuss
+## 数据库名 默认: discuss
 D_MONGO_DB=
 ## 用户名
 D_MONGO_USER=admin
@@ -143,13 +143,13 @@ D_MONGO_SSL=
 
 ### 邮件模板(管理员)
 
-- 默认: [master.html](https://github.com/Lete114/Discuss/blob/dev/public/master.html)
+- 默认: [master.html](https://github.com/discussjs/Discuss/blob/main/public/master.html)
 
 模板允许的变量: `${subject}`、`${nick}`、`${avatar}`、`${content}`、`${ip}`、`${mail}`、`${url}`
 
 ### 邮件模板(评论者)
 
-- 默认: [reply.html](https://github.com/Lete114/Discuss/blob/dev/public/reply.html)
+- 默认: [reply.html](https://github.com/discussjs/Discuss/blob/main/public/reply.html)
 
 模板允许的变量: `${subject}`、`${Ravatar}`、`${Rcontent}`、`${nick}`、`${avatar}`、`${content}`、`${url}`
 
@@ -163,7 +163,7 @@ D_MONGO_SSL=
   ...
   <!-- <script src="https://cdn.jsdelivr.net/npm/discuss"></script> -->
   <!-- 建议你使用指定版本的js，而不是上方的最新版本，因为后续如果js有更新的话，可能会出现问题 -->
-  <script src="https://cdn.jsdelivr.net/npm/discuss@1.0.3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/discuss@1.0.4"></script>
   ...
 </head>
 <body>
@@ -171,7 +171,7 @@ D_MONGO_SSL=
   <div id="Discuss-Comments"></div>
   <script>
     // 初始化
-    Discuss.init({
+    discuss.init({
       el: '#Discuss-Comments',
       serverURLs: ''
     })
@@ -190,9 +190,9 @@ D_MONGO_SSL=
 ```html
 <head>
   ...
-  <!-- <script src="https://cdn.jsdelivr.net/npm/discuss/dist/Discuss.admin.js"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/discuss/dist/discuss.admin.js"></script> -->
   <!-- 建议你使用指定版本的js，而不是上方的最新版本，因为后续如果js有更新的话，可能会出现问题 -->
-  <script src="https://cdn.jsdelivr.net/npm/discuss@1.0.3/dist/Discuss.admin.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/discuss@1.0.4/dist/discuss.admin.js"></script>
   ...
 </head>
 <body>
@@ -200,7 +200,7 @@ D_MONGO_SSL=
   <div id="Discuss-Comments-Admin"></div>
   <script>
     // 初始化评论管理
-    DiscussAdmin.init({
+    discussAdmin.init({
       el: '#Discuss-Comments-Admin',
       serverURLs: ''
     })
@@ -287,6 +287,18 @@ D_MONGO_SSL=
 - 默认: `1像素白色base64图`
 
 评论图片懒加载，加载动画
+
+### emotCDN
+
+- 类型: `String`
+- 默认: `https://unpkg.com`
+
+自定义默认表情的 CDN 地址
+
+::: warning
+只能自定义评论自带的表情地址，如果你自定义表情，该属性无效
+:::
+
 
 ### emotMaps
 

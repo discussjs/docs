@@ -48,7 +48,7 @@ module.exports = {
           { text: '在 Hexo 中使用', link: '/support/Hexo' }
         ]
       },
-      { text: 'GitHub', link: 'https://github.com/discussjs/Discuss' },
+      { text: 'GitHub', link: 'https://github.com/discussjs/discuss' },
     ],
     sidebar: 'auto',
     lastUpdated: true,

@@ -121,7 +121,7 @@ export default {
 
       const a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
-      a.download = `Discuss.${this.table}.json`;
+      a.download = `discuss.${this.table}.json`;
       a.click();
     },
     data2json() {
