@@ -3,7 +3,7 @@
     <template #page-bottom>
       <div class="page-edit">
         <div id="Discuss-wrap"></div>
-        <script src="https://lib.baomitu.com/discuss/1.0.3/Discuss.js" ref="DiscussJS"></script>
+        <script src="https://lib.baomitu.com/discuss/1.0.4/discuss.js" ref="DiscussJS"></script>
       </div>
     </template>
   </ParentLayout>
@@ -24,7 +24,7 @@ export default {
   methods: {
     initDiscuss() {
       try {
-        Discuss.init({
+        discuss.init({
           el: '#Discuss-wrap',
           master: '管理员',
           stick: 'TOP',
