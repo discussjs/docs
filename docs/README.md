@@ -10,7 +10,7 @@ title: 简介
     <a href="https://github.com/discussjs/discuss/releases/"><img src="https://img.shields.io/npm/v/discuss?color=critical&logo=npm" alt="Version"></a>
     <img src="https://img.shields.io/npm/dm/discuss" alt="Downloads">
     <a href="https://jq.qq.com/?_wv=1027&k=lh7oS7Xt"><img src="https://img.shields.io/badge/QQ群-343890210-00a4ff?logo=tencent-qq" alt="QQ群"></a>
-    <a href="https://github.com/discussjs/discuss/blob/dev/LICENSE"><img src="https://img.shields.io/npm/l/discuss?color=ee5535" alt="MIT License"></a>
+    <a href="https://github.com/discussjs/discuss/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/discuss?color=ee5535" alt="MIT License"></a>
 </p>
 
 **Discuss**是一款简单，安全，免费的评论系统，仅提供基础的评论功能，并没有过多的功能

@@ -44,7 +44,7 @@ sidebar: auto
 ::: tip
 根据文章[获取 MongoDB 数据库](/guide/Get-MongoDB-DataBase.html)获取到的数据库连接字符串拆分填填入环境变量，举例如下
 
-其他数据库请前往[.env.example](https://github.com/Lete114/Discuss/blob/dev/.env.example)观看相应的配置信息说明
+其他数据库请前往[.env.example](https://github.com/discussjs/Discuss/blob/main/.env.example)观看相应的配置信息说明
 
 以下示例中的**用户名**和**密码**纯属虚构，并且本文编辑完成后，该数据库已被删除
 

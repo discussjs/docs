@@ -6,17 +6,17 @@ sidebar: auto
 ## 通用环境变量
 
 ::: tip
-Discuss 支持多数据库存储，让用户有更多选择存储的方式，一下是通用环境变量，具体请看[.env.example](https://github.com/Lete114/Discuss/blob/dev/.env.example)
+Discuss 支持多数据库存储，让用户有更多选择存储的方式，一下是通用环境变量，具体请看[.env.example](https://github.com/discussjs/Discuss/blob/main/.env.example)
 :::
 
-| 环境变量名称       | 必填 | 默认值    | 描述                                                                                          |
-| ------------------ | ---- | --------- | --------------------------------------------------------------------------------------------- |
-| DISCUSS_PORT       |      | 6870      | 启动的端口号(仅对服务器有用)                                                                  |
-| DISCUSS_SECRET     |      | Discuss   | Token 加密的密钥字符串([可选]自定义)                                                          |
+| 环境变量名称       | 必填 | 默认值    | 描述                                                                            |
+| ------------------ | ---- | --------- | ------------------------------------------------------------------------------- |
+| DISCUSS_PORT       |      | 6870      | 启动的端口号(仅对服务器有用)                                                    |
+| DISCUSS_SECRET     |      | Discuss   | Token 加密的密钥字符串([可选]自定义)                                            |
 | DISCUSS_DB_TYPE    | ✅   |           | 使用什么数据库 [cloudbase, deta, leancloud, mongodb, mysql, postgresql, sqlite] |
-| DISCUSS_DB_ADMIN   |      | d_admin   | 数据库管理员信息表名(建议全小写)                                                              |
-| DISCUSS_DB_COMMENT |      | d_comment | 数据库评论信息表名                                                                            |
-| DISCUSS_DB_COUNTER |      | d_counter | 数据库访问量统计信息表名                                                                      |
+| DISCUSS_DB_ADMIN   |      | d_admin   | 数据库管理员信息表名(建议全小写)                                                |
+| DISCUSS_DB_COMMENT |      | d_comment | 数据库评论信息表名                                                              |
+| DISCUSS_DB_COUNTER |      | d_counter | 数据库访问量统计信息表名                                                        |
 
 ## CloudBase 腾讯云
 
@@ -62,7 +62,7 @@ Discuss 支持多数据库存储，让用户有更多选择存储的方式，一
 
 ## MySQL
 
-在使用之前请先导入 [MySQL.sql](https://github.com/Lete114/Discuss/blob/dev/src/server/database/sql/MySQL.sql) 以完成表和表结构的创建，之后在项目中配置如下环境变量
+在使用之前请先导入 [MySQL.sql](https://github.com/discussjs/Discuss/blob/main/src/server/database/sql/MySQL.sql) 以完成表和表结构的创建，之后在项目中配置如下环境变量
 
 | 环境变量名称     | 必填 | 默认值    | 描述       |
 | ---------------- | ---- | --------- | ---------- |
@@ -75,7 +75,7 @@ Discuss 支持多数据库存储，让用户有更多选择存储的方式，一
 
 ## PostgreSQL
 
-在使用之前请先导入 [PostgreSQL.sql](https://github.com/Lete114/Discuss/blob/dev/src/server/database/sql/PostgreSQL.sql) 以完成表和表结构的创建，之后在项目中配置如下环境变量
+在使用之前请先导入 [PostgreSQL.sql](https://github.com/discussjs/Discuss/blob/main/src/server/database/sql/PostgreSQL.sql) 以完成表和表结构的创建，之后在项目中配置如下环境变量
 
 | 环境变量名称  | 必填 | 默认值    | 描述     |
 | ------------- | ---- | --------- | -------- |
@@ -87,7 +87,7 @@ Discuss 支持多数据库存储，让用户有更多选择存储的方式，一
 
 ## SQLite
 
-SQLite 表结构我并未编写，如果你需要，你可以借鉴[MySQL.sql](https://github.com/Lete114/Discuss/blob/dev/src/server/database/sql/MySQL.sql)或[PostgreSQL.sql](https://github.com/Lete114/Discuss/blob/dev/src/server/database/sql/PostgreSQL.sql)编写一个，如果你愿意的话，欢迎你提交`PR`~😁
+SQLite 表结构我并未编写，如果你需要，你可以借鉴[MySQL.sql](https://github.com/discussjs/Discuss/blob/main/src/server/database/sql/MySQL.sql)或[PostgreSQL.sql](https://github.com/discussjs/Discuss/blob/main/src/server/database/sql/PostgreSQL.sql)编写一个，如果你愿意的话，欢迎你提交`PR`~😁
 
 | 环境变量名称  | 必填 | 默认值  | 描述             |
 | ------------- | ---- | ------- | ---------------- |
