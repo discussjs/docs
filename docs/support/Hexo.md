@@ -13,4 +13,7 @@ title: 支持 Discuss 评论系统
 > [Supported](https://github.com/Lete114/Hexo-Theme-MengD)
 
 ## Hexo-Theme-Volantis
-> [Supported](github.com/volantis-x/hexo-theme-volantis)
+> [Supported](https://github.com/volantis-x/hexo-theme-volantis)
+
+## Hexo-Theme-SinGO
+> [Supported](https://github.com/StarWEB890/hexo-theme-singo)
