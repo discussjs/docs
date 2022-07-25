@@ -38,7 +38,7 @@ module.exports = {
           { text: '导入评论', link: '/guide/Import' },
           { text: '多数据库支持', link: '/guide/More-DataBase' },
           { text: 'API 文档', link: '/guide/API-Docs' },
-          { text: '获取MongoDB数据库', link: '/guide/Get-MongoDB-DataBase' }
+          { text: '申请 MongoDB', link: '/guide/Get-MongoDB-DataBase' }
         ]
       },
       {
