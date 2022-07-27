@@ -56,7 +56,7 @@ export default {
       const style = document.createElement('style')
       style.textContent = `#Discuss .D-input-content {
                             background-repeat: no-repeat;
-                            background-position: right bottom;
+                            background-position: right -10px;
                             background-image: url(${emot});
                           }`
       document.head.appendChild(style)
