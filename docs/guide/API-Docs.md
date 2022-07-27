@@ -12,13 +12,13 @@ Discuss API 与 Discuss 本身并没有直接的关系，你可以随时调用�
 
 ::: tip 提示
 
-如果你的页面已经初始化 (即执行了`Discuss.init()`) 则会自动寻找当前页面时候存在 id 为`Discuss-Visitors`的 DOM 元素有则自动统计
+如果你的页面已经初始化 (即执行了`discuss.init()`) 则会自动寻找当前页面时候存在 id 为`Discuss-Visitors`的 DOM 元素有则自动统计
 :::
 
 例子:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/discuss@latest/dist/Discuss.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/discuss@latest/dist/discuss.js"></script>
 
 <script>
   /**
@@ -27,7 +27,7 @@ Discuss API 与 Discuss 本身并没有直接的关系，你可以随时调用�
    * @param {String} path 页面的唯一标识符 如：location.pathname
    * @returns {Number}
    */
-  Discuss.VisitStat(url, path).then((data) => {
+  discuss.getVisitStat(url, path).then((data) => {
     console.log(data); // 返回数量
   });
 </script>
@@ -40,7 +40,7 @@ Discuss API 与 Discuss 本身并没有直接的关系，你可以随时调用�
 例子:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/discuss@latest/dist/Discuss.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/discuss@latest/dist/discuss.js"></script>
 
 <script>
   /**
@@ -49,7 +49,7 @@ Discuss API 与 Discuss 本身并没有直接的关系，你可以随时调用�
    * @param {Boolean} reply 是否请求回复评论 默认: true
    * @returns {Array}
    */
-  Discuss.RecentComment(url, reply).then((data) => {
+  discuss.getRecentComment(url, reply).then((data) => {
     console.log(data);
     // 返回的 Array
     // [
@@ -77,7 +77,7 @@ Discuss API 与 Discuss 本身并没有直接的关系，你可以随时调用�
 例子:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/discuss@latest/dist/Discuss.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/discuss@latest/dist/discuss.js"></script>
 
 <script>
   /**
@@ -87,7 +87,7 @@ Discuss API 与 Discuss 本身并没有直接的关系，你可以随时调用�
    * @param {Boolean} reply 是否请求回复评论 默认: true
    * @returns {Array}
    */
-  Discuss.CommentCount(url, paths, reply).then((data) => {
+  discuss.getCommentCount(url, paths, reply).then((data) => {
     console.log(data);
     // 返回的 Array
     // [

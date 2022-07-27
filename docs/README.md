@@ -62,7 +62,7 @@ title: 简介
 如果你对**Discuss**感兴趣，并想提供帮助或贡献，欢迎你的参与 🎉🎉🎉
 
 ```bash
-git clone https://github.com/discussjs/Discuss.git Discuss
+git clone https://github.com/discussjs/discuss.git discuss
 cd Discuss
 npm install               # 安装依赖
 npm run start:client      # 启动客户端
