@@ -13,6 +13,7 @@ Discuss 支持多数据库存储，让用户有更多选择存储的方式，一
 | ------------------ | ---- | --------- | -------------------------------------------------------------- |
 | DISCUSS_PORT       |      | 6870      | 启动的端口号(仅对服务器有用)                                   |
 | DISCUSS_SECRET     |      | discuss   | Token 加密的密钥字符串([可选]自定义)                           |
+| DISCUSS_AUDIT      |      | false     | 设置评论是否开启审核模式                                       |
 | DISCUSS_DB_TYPE    | ✅   |           | 使用什么数据库 [mongodb, mysql, postgresql, sqlite, cloudbase] |
 | DISCUSS_DB_ADMIN   |      | d_admin   | 数据库管理员信息表名(建议全小写)                               |
 | DISCUSS_DB_COMMENT |      | d_comment | 数据库评论信息表名                                             |
