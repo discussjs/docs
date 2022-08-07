@@ -48,7 +48,7 @@ export default {
       if (to.path !== from.path) this.initDiscuss()
     },
     setEmot() {
-      let SitichCount = 29
+      let SitichCount = 37
 
       const Sitich = this.heandlerEmot(SitichCount, '/img/emot/Sitich/', [])
 
@@ -56,7 +56,7 @@ export default {
       const style = document.createElement('style')
       style.textContent = `#Discuss .D-input-content {
                             background-repeat: no-repeat;
-                            background-position: right -10px;
+                            background-position: right bottom 20px;
                             background-image: url(${emot});
                           }`
       document.head.appendChild(style)
