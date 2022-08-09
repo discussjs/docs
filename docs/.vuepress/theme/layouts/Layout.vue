@@ -32,7 +32,7 @@ export default {
           master: '管理员',
           stick: 'TOP',
           ph: '文档未开启邮件通知，如果你有任何问题，请加官方用户交流QQ群：343890210',
-          serverURLs: 'https://env-jxscvzag.service.tcloudbase.com/discuss/doc'
+          serverURLs: 'https://discuss-doc.imlete.cn'
         })
         this.setEmot()
       } catch (error) {}
