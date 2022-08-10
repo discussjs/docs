@@ -33,11 +33,18 @@ module.exports = {
         ]
       },
       {
+        text: '迁移',
+        items: [
+          { text: '迁移须知', link: '/guide/import/migration' },
+          { text: 'twikoo', link: '/guide/import/twikoo' },
+          { text: 'waline', link: '/guide/import/waline' }
+        ]
+      },
+      {
         text: '更多',
         items: [
-          { text: '导入评论', link: '/guide/Import' },
-          { text: '多数据库支持', link: '/guide/More-DataBase' },
           { text: 'API 文档', link: '/guide/API-Docs' },
+          { text: '多数据库支持', link: '/guide/More-DataBase' },
           { text: '申请 MongoDB', link: '/guide/Get-MongoDB-DataBase' }
         ]
       },
