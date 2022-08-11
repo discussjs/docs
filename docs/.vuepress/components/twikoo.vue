@@ -15,9 +15,7 @@
         ></textarea>
       </div>
       <div class="import-item">
-        <button @click="onDownload" :disabled="isDownload">
-          Download
-        </button>
+        <button @click="onDownload" :disabled="isDownload">Download</button>
       </div>
     </div>
   </div>
@@ -112,7 +110,7 @@ export default {
         else if (i._id) counter.id = i._id
         else if (i.objectId) counter.id = i.objectId
         else counter.id = i.id
-        
+
         counter.id = counter.id.substring(0, 24)
         counter.path = this.indexHandler(i.url)
         counter.time = i.time
@@ -153,14 +151,8 @@ export default {
         comment.site = c.link || ''
         comment.content = this.parseDOM(c.comment)
 
-        const { pid, rid } = c
-
-        if (pid && rid) {
-          comment.pid = rid
-          comment.rid = pid
-        }
-        comment.pid = (comment.pid || '').slice(0, 24)
-        comment.rid = (comment.rid || '').slice(0, 24)
+        comment.pid = (c.pid || '').slice(0, 24)
+        comment.rid = (c.rid || '').slice(0, 24)
 
         comment.ua = c.ua
         comment.ip = c.ip
@@ -172,6 +164,16 @@ export default {
         comment.updated = c.updated
 
         comments.push(comment)
+      }
+      for (const c1 of comments) {
+        if(c1.pid) continue
+        for (const c2 of comments) {
+          if (c2.rid === c1.id) {
+            const { pid } = c2
+            c2.pid = c1.id
+            c2.rid = pid
+          }
+        }
       }
       return comments
     }
@@ -199,7 +201,6 @@ export default {
   border: 1px solid #33323e;
   border-radius: 5px;
 }
-
 
 .import-item {
   display: flex;

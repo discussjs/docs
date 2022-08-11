@@ -148,20 +148,15 @@ export default {
         else if (c.objectId) comment.id = c.objectId
         else comment.id = c.id
 
+        console.log('comment.id', comment.id)
         comment.id = comment.id.slice(0, 24)
         comment.nick = c.nick
         comment.mail = c.mail
         comment.site = c.link || ''
         comment.content = this.parseDOM(c.comment)
 
-        const { pid, rid } = c
-
-        if (pid && rid) {
-          comment.pid = rid
-          comment.rid = pid
-        }
-        comment.pid = (comment.pid || '').slice(0, 24)
-        comment.rid = (comment.rid || '').slice(0, 24)
+        comment.pid = (c.pid || '').slice(0, 24)
+        comment.rid = (c.rid || '').slice(0, 24)
 
         comment.ua = c.ua
         comment.ip = c.ip
@@ -190,6 +185,16 @@ export default {
         comment.updated = new Date(c.updatedAt).getTime()
 
         comments.push(comment)
+      }
+      for (const c1 of comments) {
+        if(c1.pid) continue
+        for (const c2 of comments) {
+          if (c2.rid === c1.id) {
+            const { pid } = c2
+            c2.pid = c1.id
+            c2.rid = pid
+          }
+        }
       }
       return comments
     }
