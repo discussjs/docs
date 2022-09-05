@@ -163,7 +163,7 @@ D_MONGO_SSL=
   ...
   <!-- <script src="https://cdn.jsdelivr.net/npm/discuss@latest/dist/discuss.js"></script> -->
   <!-- 建议你使用指定版本的js，而不是上方的最新版本，因为后续如果js有更新的话，可能会出现问题 -->
-  <script src="https://cdn.jsdelivr.net/npm/discuss@1.1.5/dist/discuss.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/discuss@1.1.6/dist/discuss.js"></script>
   ...
 </head>
 <body>
@@ -192,7 +192,7 @@ D_MONGO_SSL=
   ...
   <!-- <script src="https://cdn.jsdelivr.net/npm/discuss@latest/dist/discuss.admin.js"></script> -->
   <!-- 建议你使用指定版本的js，而不是上方的最新版本，因为后续如果js有更新的话，可能会出现问题 -->
-  <script src="https://cdn.jsdelivr.net/npm/discuss@1.1.5/dist/discuss.admin.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/discuss@1.1.6/dist/discuss.admin.js"></script>
   ...
 </head>
 <body>
@@ -300,11 +300,11 @@ D_MONGO_SSL=
 ```js
 discuss.init({
   // baomitu (默认内置)
-  emotCDN: 'https://lib.baomitu.com/discuss/1.1.5'
+  emotCDN: 'https://lib.baomitu.com/discuss/1.1.6'
   // unpkg
-  emotCDN: 'https://unpkg.com/discuss@1.1.5'
+  emotCDN: 'https://unpkg.com/discuss@1.1.6'
   // jsdelivr
-  emotCDN: 'https://cdn.jsdelivr.net/npm/discuss@1.1.5'
+  emotCDN: 'https://cdn.jsdelivr.net/npm/discuss@1.1.6'
 })
 ```
 
