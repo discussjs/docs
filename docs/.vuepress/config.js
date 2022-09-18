@@ -31,18 +31,7 @@ module.exports = {
   themeConfig: {
     nav: [
       {
-        text: '快速上手',
-        items: [
-          { text: '快速开始', link: '/quick-start/Quick-Start' },
-          { text: '配置', link: '/quick-start/Config' }
-        ]
-      },
-      {
-        text: '免费部署',
-        items: [
-          { text: 'Vercel', link: '/deploy/Vercel-ServerLess-Deploy' },
-          { text: 'CloudBase', link: '/deploy/CloudBase-ServerLess-Deploy' }
-        ]
+        text: '快速上手', link: '/Quick-Start'
       },
       {
         text: '迁移',

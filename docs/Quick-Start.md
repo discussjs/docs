@@ -1,7 +1,220 @@
 ---
-title: 配置
+title: 快速开始
 sidebar: auto
 ---
+
+## 太长不想看
+
+::: warning
+这是一个简短的 Discuss 构建指南 (适合有开发经验的用户)。<br>
+选择部署方式 **服务器** OR **无服务器(Serverless)**。<br>
+如果的话，可以直接跳转至下方的`vercel部署`或`cloudbase部署`。
+:::
+
+::: tip 说明
+咕咕咕
+:::
+
+## 无服务端（ServerLess）
+
+1. 新建`package.json`，填入如下内容
+
+```json
+{ "dependencies": { "discuss": "latest" } }
+```
+
+2. 新建`index.js`，填入如下内容
+
+```js
+const discuss = require('discuss')
+
+// 选择以什么方式运行
+discuss.server() // 服务器使用 (Server)
+
+discuss.main() // 无服务器使用 (ServerLess)
+```
+
+4. 配置[环境变量](/guide/More-DataBase.html)，填写相关的配置信息
+5. 使用`nodejs`执行执行`index.js`文件，即：`node index.js`
+6. 访问启动的服务地址，初始化管理员账户即可
+
+## 服务端 (Server)
+
+::: tip 提示
+如果你没有服务器(不想部署在服务器上)的话，你可以选择[免费部署](/deploy/Vercel-ServerLess-Deploy.html)
+:::
+
+初始化 npm 项目
+
+```bash
+mkdir Discuss                   # 创建目录
+cd Discuss                      # 进入目录
+npm init -y                     # 初始化npm
+npm install discuss --save      # 安装Discuss
+touch index.js .env             # 创建index.js 以及 .env(环境配置文件)
+```
+
+编辑`index.js`
+
+```js
+const discuss = require('discuss')
+
+// 选择以什么方式运行
+discuss.server() // 服务器使用 (Server)
+
+discuss.main() // 无服务器使用 (ServerLess)
+```
+
+编辑`.env`，以`MongoDB`数据库为例
+:::tip
+具体如何配置其他数据库请前往[.env.example](https://github.com/discussjs/Discuss/blob/main/.env.example)观看相应的配置信息说明
+:::
+
+```bash
+# Discuss environment Config
+
+# 启动的端口号(仅对服务器有用)
+DISCUSS_PORT=6870
+
+# Token 加密的密钥字符串([可选]自定义)
+DISCUSS_SECRET=discuss
+
+# 数据库连接
+
+# 使用什么数据库
+## 目前可选的数据库 [cloudbase, deta, leancloud, mongodb, mysql, postgresql, sqlite]
+DISCUSS_DB_TYPE=mongodb
+
+# ------ MongoDB ------
+## 如果你使用的是mongodb官方的免费数据库
+## 你可以使用连接字符串必须选择‘v2.2.12’版本的连接字符串
+## 将填入D_MONGO_URL环境变量即可，下面的其它配置就不用填写，仅需填写D_MONGO_URL即可
+D_MONGO_URL=
+## 主机地址 默认: 127.0.0.1
+D_MONGO_HOST=
+## 端口 默认: 27017
+D_MONGO_PORT=
+## 数据库名 默认: discuss
+D_MONGO_DB=
+## 用户名
+D_MONGO_USER=admin
+## 密码
+D_MONGO_PASSWORD=111111
+## [可选项] 集群
+D_MONGO_REPLICASET=
+## [可选项] 认证源
+D_MONGO_AUTHSOURCE=
+## [可选项] 是否启用 SSL 连接方式
+D_MONGO_SSL=
+```
+
+最后使用`nodejs`执行执行`index.js`文件，即：`node index.js`
+
+::: tip 说明
+本文以`Vercel`+`MongoDB`部署`Discuss`评论系统服务为例
+:::
+
+## vercel部署
+
+::: tip 说明
+123
+:::
+
+### vercel注册
+
+&nbsp;&nbsp;&nbsp;&nbsp;注册 [Vercel](https://vercel.com/signup)账号，推荐使用 GitHub 账户注册。
+
+::: warning
+**注意。** 不要使用`@qq.com`邮箱注册vercel，如果你的github账户是`@qq.com`的话，建议修改为别的邮箱，否则用`@qq.com`邮箱注册vercel的话，会发生一些不必要的麻烦。
+:::
+
+### 部署
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Lete114/Discuss-Deploy/tree/Vercel)
+
+&nbsp;&nbsp;&nbsp;&nbsp;点击上方 `Deploy` 按钮，将 `Discuss` 评论服务一键部署到 Vercel 平台，
+
+&nbsp;&nbsp;&nbsp;&nbsp;随后会提醒你创建一个 Git 仓库，方便后期管理以及部署，你需要输入一个仓库名，例如：`Discuss-Vercel`，点击 `Create`，等待构建完成，
+
+![Start-Deploy](/img/deploy/Vercel-ServerLess-Deploy/Start-Deploy.png)
+
+&nbsp;&nbsp;&nbsp;&nbsp;等待构建完成后点击`Go to Dashboard`(前往控制面板)，
+
+::: tip 说明
+因为这种一部部署的方式无法在创建的时候编辑环境变量，所以部署完成以后会出现如下，但是不用担心，
+:::
+
+![Create](/img/deploy/Vercel-ServerLess-Deploy/Create.png)
+
+### 创建环境变量
+
+&nbsp;&nbsp;&nbsp;&nbsp;点击`Settings`进入设置选择`Environment Variables`，添加环境变量
+
+&nbsp;&nbsp;&nbsp;&nbsp;具体环境变量参数请见: [多数据库参数](/guide/More-DataBase.html)
+
+![Settings](/img/deploy/Vercel-ServerLess-Deploy/Settings.png)
+![Add-Env](/img/deploy/Vercel-ServerLess-Deploy/Add-Env.png)
+
+### 重新部署
+
+&nbsp;&nbsp;&nbsp;&nbsp;由于您是先部署，后配置环境变量，所以环境变量没有生效，你需要点击顶部的`Deployments`，重新部署后环境变量才能生效，最后访问服务端地址，初始化管理员账户
+![Redeploy](/img/deploy/Vercel-ServerLess-Deploy/Redeploy.png)
+
+### 初始化管理员
+
+![Init](/img/deploy/Vercel-ServerLess-Deploy/Init.png)
+
+## 腾讯云CloudBase部署
+
+<!-- ::: warning
+![云开发计费模式升级](/img/deploy/CloudBase-ServerLess-Deploy/Cloudbase-updatedCost.png)<br>
+因为从2022-08-08号开始，云开发计费模式升级，cloudbase不再免费，故不建议此种部署方式，推荐[vercel部署](/deploy/Vercel-ServerLess-Deploy)。
+::: -->
+
+### 新建云函数
+
+1. 进入[云开发控制台](https://console.cloud.tencent.com/tcb/)
+2. 进入[环境云函数](https://console.cloud.tencent.com/tcb/scf/index)并新建云函数，同时填写**函数代码**，最后点击确定即可
+
+```js
+const serverless = require("serverless-http");
+const main = require("discuss").main;
+
+exports.main = serverless(main);
+```
+
+![Create Function](/img/deploy/CloudBase-ServerLess-Deploy/Create-Function.png)
+
+![Config Function](/img/deploy/CloudBase-ServerLess-Deploy/Config-Function.png)
+
+### 创建 NPM 依赖文件
+
+进入创建好的云函数，并且点击上边的函数代码，进入到在线编辑，并新建`package.json`文件，填入如下信息，最后点击下方的**保存并安装依赖**
+
+```json
+{
+  "dependencies": {
+    "discuss": "latest",
+    "serverless-http": "2.7.0"
+  }
+}
+```
+
+![Create Package](/img/deploy/CloudBase-ServerLess-Deploy/Create-Package.png)
+
+### 添加环境变量
+
+点击上方**函数配置**，并且点击右上角的**编辑**
+::: tip
+进入云开发[API 密钥管理](https://console.cloud.tencent.com/cam/capi)，并创建密钥，关于环境变量的详细信息[多数据库支持](/guide/More-DataBase.html#cloudbase-腾讯云)
+:::
+
+::: warning 提醒
+配置好环境变量后，你可以看到下方有个**HTTP 访问服务路径**，暂时先不要点击前往配置，你得先点击保存，保存成功后再次点击右上角编辑现网配置**HTTP 访问服务路径**
+:::
+![Edit Info](/img/deploy/CloudBase-ServerLess-Deploy/Edit-Info.png)
+![Env](/img/deploy/CloudBase-ServerLess-Deploy/Env.png)
+![HTTP](/img/deploy/CloudBase-ServerLess-Deploy/HTTP.png)
 
 ## 配置管理
 

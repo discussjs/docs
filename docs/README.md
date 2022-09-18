@@ -2,7 +2,7 @@
 title: 简介
 ---
 
-<h1 align="center"><a href="https://discuss.js.org" target="_blank"><img src="/svg/Logo.svg" alt="Logo"></a></h1>
+<h1 align="center"><a href="https://discuss.js.org" target="_blank"><img src="/svg/Logo.svg" alt="Logo"></a></h1> <!-- https://s2.loli.net/2022/09/18/rcG7mvliW2yXNha.png -->
 <p align="center">一款简单，安全，轻量，免费的评论系统 | A simple, safe, free comment system</p>
 
 <p align="center">
@@ -13,12 +13,11 @@ title: 简介
     <a href="https://github.com/discussjs/discuss/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/discuss?color=ee5535" alt="MIT License"></a>
 </p>
 
-**Discuss**是一款简单，安全，免费的评论系统，仅提供基础的评论功能，并没有过多的功能
+**Discuss**是一款简单，安全，免费的评论系统，仅提供基础的评论功能，并没有过多的功能，
 
-这可以使得 **Discuss** 可以融合进其它项目，甚至可以方便而再此基础上进行二次开发
+这可以使得 **Discuss** 可以融合进其它项目，甚至可以方便而再此基础上进行二次开发，
 
-举例可以二次开发添加如下新功能，甚至其它更多功能
-
+举例可以二次开发添加如下新功能，甚至其它更多功能：
 1. 新增**Markdown**、代码块高亮等等
 2. 新增图片上传
 3. 新增数学公式
@@ -26,13 +25,13 @@ title: 简介
 5. 新增 IP 属地
 6. 新增显示用户操作系统、浏览器等
 
-不管你的网站使用的是什么配色 **Discuss** 都可以轻松适应，如: 浅色/深色模式切换，**Discuss** 会自适应
+不管你的网站使用的是什么配色 **Discuss** 都可以轻松适应，如: 浅色/深色模式切换，**Discuss** 会自适应。
 
 ## 个性
 
 - 多数据库支持(5 种)
 - 深色模式 (自动适配深色模式)
-- 支持自定义`博主` `置顶`表示文字
+- 支持自定义`博主`、`置顶`表示文字
 - 支持自定义评论框`placeholder`(占位符)
 - 支持限制评论字数 (避免大量文字信息写入数据库)
 - 支持自定义邮件模板
