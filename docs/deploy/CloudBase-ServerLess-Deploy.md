@@ -3,6 +3,11 @@ title: 腾讯云开发(CloudBase)部署
 sidebar: auto
 ---
 
+::: warning
+![云开发计费模式升级](/img/deploy/CloudBase-ServerLess-Deploy/Cloudbase-updatedCost.png)<br>
+因为从2022-08-08号开始，云开发计费模式升级，cloudbase不再免费，故不建议此种部署方式，推荐[vercel部署](/deploy/Vercel-ServerLess-Deploy)。
+:::
+
 ## 新建云函数
 
 1. 进入[云开发控制台](https://console.cloud.tencent.com/tcb/)
@@ -16,6 +21,7 @@ exports.main = serverless(main);
 ```
 
 ![Create Function](/img/deploy/CloudBase-ServerLess-Deploy/Create-Function.png)
+
 ![Config Function](/img/deploy/CloudBase-ServerLess-Deploy/Config-Function.png)
 
 ## 创建 NPM 依赖文件

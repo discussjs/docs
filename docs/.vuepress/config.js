@@ -1,3 +1,9 @@
+
+/*
+ * config.js
+ * 它是怎么工作的？
+ */
+
 module.exports = {
   title: 'Discuss 开源免费评论系统',
   description: '一款简单，安全，免费的评论系统 | A simple, safe, free comment system',
@@ -24,7 +30,13 @@ module.exports = {
   },
   themeConfig: {
     nav: [
-      { text: '快速开始', link: '/Quick-Start' },
+      {
+        text: '快速上手',
+        items: [
+          { text: '快速开始', link: '/quick-start/Quick-Start' },
+          { text: '配置', link: '/quick-start/Config' }
+        ]
+      },
       {
         text: '免费部署',
         items: [
@@ -45,14 +57,15 @@ module.exports = {
         items: [
           { text: 'API 文档', link: '/guide/API-Docs' },
           { text: '多数据库支持', link: '/guide/More-DataBase' },
-          { text: '申请 MongoDB', link: '/guide/Get-MongoDB-DataBase' }
+          { text: '申请 MongoDB', link: '/guide/Get-MongoDB-DataBase' },
+          { text: '如何更新', link: '/guide/Update-Discuss' }
         ]
       },
       {
         text: '支持',
         items: [
-          { text: '有哪些网站在使用', link: '/support/Site' },
-          { text: '在 Hexo 中使用', link: '/support/Hexo' }
+          { text: '在 Hexo 中使用', link: '/support/Hexo' },
+          { text: '有哪些网站在使用', link: '/support/Site' }
         ]
       },
       { text: 'GitHub', link: 'https://github.com/discussjs/discuss' },
