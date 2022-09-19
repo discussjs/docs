@@ -141,7 +141,7 @@ D_MONGO_SSL=
 &nbsp;&nbsp;&nbsp;&nbsp;等待构建完成后点击`Go to Dashboard`(前往控制面板)，
 
 ::: tip 说明
-因为这种一部部署的方式无法在创建的时候编辑环境变量，所以部署完成以后会出现如下，但是不用担心，
+因为这种部署的方式无法在创建的时候编辑环境变量，所以部署完成以后会出现如下，但是不用担心，
 :::
 
 ![Create](/img/deploy/Vercel-ServerLess-Deploy/Create.png)
