@@ -4,7 +4,7 @@
       <div class="page-edit">
         <div id="Discuss-wrap"></div>
         <script
-          src="https://lib.baomitu.com/discuss/1.1.6/dist/discuss.js"
+          src="https://lib.baomitu.com/discuss/1.1.7/dist/discuss.js"
           ref="DiscussJS"
         ></script>
       </div>
